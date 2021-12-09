@@ -16,7 +16,7 @@ const movieSlice = createSlice({
 });
 
 export const {addMovies}= movieSlice.actions;
-export const getAllMovies = (state) => state.movies;
+export const getAllMovies = (state) => state.movies.movies;
 export default movieSlice.reducer;
 
 

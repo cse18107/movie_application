@@ -7,12 +7,12 @@ import { addMovies } from "../../features/movies/movieSlice";
 
 
 const Home = () => {
-  const [data, setData] = useState([]);
+  //const [data, setData] = useState({});
   const movieText = "iron man";
   const dispatch = useDispatch()
   useEffect(() => {
     fetchMovies();
-    dispatch(addMovies(data));
+    
   }, []);
 
   
@@ -26,10 +26,12 @@ const Home = () => {
       const res = await response.json();
 
       console.log("The response from api: " + res.Search);
-      setData(res.Search);
+      //setData(res);
+      dispatch(addMovies(res));
     } catch (error) {
       console.log(error);
     }
+    
   }
 
   return (
